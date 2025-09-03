@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+:root {
+  /* Superficies */
+  --color-surface-1: #192229;
+  --color-surface-2: #141b1f;
+  --color-surface-card: #28353e;
+
+  /* Texto */
+  --color-text-primary: #fdfeff;
+  --color-text-secondary: #abb3b8;
+
+  /* Bordes */
+  --color-border: #27343d;
+  --color-border-alt: #4f606b;
+
+  /* Marca y estados */
+  --color-accent-primary: #1292ee;
+  --color-success: #00b141;
+  --color-warning: #d3900b;
+  --color-error: var(--color-red-500);
+}
+
+@theme {
+  --color-dark: var(--color-surface-1);
+  --color-dark-alt: var(--color-surface-2);
+  --color-card: var(--color-surface-card);
+
+  --color-title: var(--color-text-primary);
+  --color-subtitle: var(--color-text-secondary);
+
+  --color-border: var(--color-border);
+  --color-border-alt: var(--color-border-alt);
+
+  --color-primary: var(--color-accent-primary);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
+
+  --font-Inter: var(--font-inter);
+  --font-Manrope: var(--font-manrope);
+}
+
+body {
+  background: var(--color-dark-alt);
+  color: var(--color-title);
+  font-family: var(--font-Inter), sans-serif;
+}
+
+/* Se eliminan los pulsos azules */
+a,
+button,
+select,
+div {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+  max-width: var(--container-7xl);
+}
+
+/* Estilos de la tabla */
+@layer components {
+  .table-container table {
+    @apply w-full border-separate border-spacing-y-1;
+  }
+  .table-container thead th:first-child {
+    @apply rounded-l-md;
+  }
+  .table-container thead th:last-child {
+    @apply rounded-r-md;
+  }
+  .table-container thead th {
+    @apply text-sm text-subtitle font-semibold bg-card;
+  }
+
+  .table-container tbody td:first-child {
+    @apply rounded-l-lg border-l border-dark;
+  }
+  .table-container tbody td:last-child {
+    @apply rounded-r-lg border-r border-dark;
+  }
+  .table-container tbody td {
+    @apply py-4 px-4 text-sm text-title border-y border-dark;
+  }
+
+  .table-container tbody tr:hover td {
+    @apply bg-card transition-colors border-y border-border-alt;
+  }
+
+  .table-container tbody tr:hover td:first-child {
+  @apply border-l border-border-alt;
+}
+
+.table-container tbody tr:hover td:last-child {
+  @apply border-r border-border-alt;
+}
+
+  .table-container table span {
+    @apply overflow-hidden text-ellipsis whitespace-nowrap;
+  }
+  /* .table-container tbody tr {
+    @apply ;
+  } */
+  .table-container tbody tr:last-child td:last-child {
+    @apply border-none bg-dark;
+  }
+  .text-td {
+    @apply font-normal text-subtitle;
+  }
+  .text-td-alt {
+    @apply text-title;
+  }
+}
