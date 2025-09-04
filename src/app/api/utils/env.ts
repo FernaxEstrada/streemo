@@ -1,16 +1,29 @@
-function getEnvVar(key: string): string {
-  const value = process.env[key];
+function getRequiredEnv(key: string): string {
+  const value = process.env[key]
   if (!value) {
-    throw new Error(`la variable de entorno ${key} no está definida`);
+    throw new Error(`la variable de entorno ${key} no está definida`)
   }
-  return value;
+  return value
 }
 
+// Usar getters para evitar evaluar en tiempo de build (Vercel "collecting page data")
 export const env = {
-  JWT_SECRET: getEnvVar("JWT_SECRET"),
-  DB_USER: getEnvVar("DB_USER"),
-  DB_PASSWORD: getEnvVar("DB_PASSWORD"),
-  DB_HOST: getEnvVar("DB_HOST"),
-  DB_PORT: Number(getEnvVar("DB_PORT")),
-  DB_NAME: getEnvVar("DB_NAME"),
-};
+  get JWT_SECRET() {
+    return getRequiredEnv("JWT_SECRET")
+  },
+  get DB_USER() {
+    return getRequiredEnv("DB_USER")
+  },
+  get DB_PASSWORD() {
+    return getRequiredEnv("DB_PASSWORD")
+  },
+  get DB_HOST() {
+    return getRequiredEnv("DB_HOST")
+  },
+  get DB_PORT() {
+    return Number(getRequiredEnv("DB_PORT"))
+  },
+  get DB_NAME() {
+    return getRequiredEnv("DB_NAME")
+  },
+}
