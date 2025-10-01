@@ -71,9 +71,7 @@ export async function GET(req: NextRequest) {
         pp.idplanp,
         pp.nombreplan,
         pp.correo,
-        pp.fechainicio,
         pp.costo,
-        pp.proxpago,
         pp.direccionplan,
         pp.estado AS estadoplanp,
 
