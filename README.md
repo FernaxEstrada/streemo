@@ -20,11 +20,15 @@ Sistema para gestionar planes principales, planes de cupo, ventas de cupo y pago
 Crear `.env.local` en la raíz con:
 
 ```
-DB_USER=feresdev
-DB_PASSWORD=feresdev2025a*
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=streemodb
+JWT_SECRET=
+
+DB_USER=
+DB_PASSWORD=
+DB_HOST=
+DB_PORT=
+DB_NAME=
+
+NEXT_PUBLIC_API_URL=
 ```
 
 ## Base de datos
