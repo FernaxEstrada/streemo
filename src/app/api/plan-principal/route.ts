@@ -82,6 +82,7 @@ export async function GET(req: NextRequest) {
       JOIN persona p ON pp.idpersona = p.idpersona
       JOIN metodopago mp ON pp.idmetpago = mp.idmetpago
       JOIN tarjeta t ON pp.idtarjeta = t.idtarjeta
+      WHERE pp.estado = true
       `);
 
     const planesPrincipales = result.rows.map(mapPlanPrincipal);

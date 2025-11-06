@@ -89,6 +89,7 @@ export async function GET(req: NextRequest) {
       JOIN planprincipal pp ON cv.idplanp = pp.idplanp
       JOIN plancupo pc ON cv.idplancupo = pc.idplancupo
       JOIN metodopago mp ON cv.idmetpago = mp.idmetpago
+      WHERE cv.estado = true
       `);
 
     const cuposVendidos = result.rows.map(mapCupoVendido);
