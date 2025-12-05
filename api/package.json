@@ -1,0 +1,30 @@
+{
+  "name": "api-streemo",
+  "version": "2.0.0",
+  "scripts": {
+    "dev": "nodemon --exec tsx apps/api-aggregator/main.ts --watch apps --watch packages",
+    "start": "node dist/apps/api-aggregator/main.js",
+    "build": "tsc && tsc-alias"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.8.2",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.3.1",
+    "drizzle-orm": "^0.44.6",
+    "hono": "^4.8.12",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.16.3",
+    "uuid": "^11.1.0",
+    "zod": "^4.0.17"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^20.11.5",
+    "@types/pg": "^8.10.9",
+    "nodemon": "^3.0.2",
+    "tsc-alias": "^1.8.8",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}
